@@ -1,0 +1,2170 @@
+<html>
+    <head></head>
+    <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliana Harmony Health - Edukasi Kesehatan Berbasis Bukti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#16a34a',
+                        accent: '#ea580c',
+                        purple: '#7c3aed',
+                        pink: '#db2777',
+                        teal: '#0d9488',
+                        amber: '#d97706',
+                        darkblue: '#1e3a8a',
+                        darkgreen: '#166534',
+                        darkorange: '#9a3412',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-in': 'bounceIn 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.5s ease-out',
+                        'slide-in-right': 'slideInRight 0.5s ease-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out',
+                        'tada': 'tada 1s ease-out',
+                        'typewriter': 'typewriter 4s steps(40) 1s 1 normal both',
+                        'blob': 'blob 7s infinite',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'fade-in-down': 'fadeInDown 0.5s ease-out',
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                        'spin-slow': 'spin 3s linear infinite',
+                        'ping-slow': 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
+                        'breath': 'breath 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Variabel CSS dengan warna yang lebih kontras */
+        :root {
+            --primary: #082462;
+            --secondary: #16a34a;
+            --accent: #ea580c;
+            --purple: #6320d6;
+            --pink: #db2777;
+            --teal: #0d9488;
+            --amber: #d97706;
+            --light: #11f46f;
+            --dark: #1e293b;
+            --success: #16a34a;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        .dark {
+            --light: #0f172a;
+            --dark: #f1f5f9;
+        }
+
+        /* Animasi Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes tada {
+            0% {
+                transform: scale(1);
+            }
+            10%, 20% {
+                transform: scale(0.9) rotate(-3deg);
+            }
+            30%, 50%, 70%, 90% {
+                transform: scale(1.1) rotate(3deg);
+            }
+            40%, 60%, 80% {
+                transform: scale(1.1) rotate(-3deg);
+            }
+            100% {
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes breath {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        .animation-delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .animation-delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .animation-delay-700 {
+            animation-delay: 0.7s;
+        }
+
+        .animation-delay-1000 {
+            animation-delay: 1s;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid;
+            white-space: nowrap;
+            animation: typewriter 4s steps(40) 1s 1 normal both;
+        }
+
+        /* Floating Elements Animation */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: rgb(253, 253, 253);
+            border-radius: 15px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .dark .chatbot-window {
+            background: #1e293b;
+            color: white;
+        }
+
+        .chatbot-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            background: #e2e8f0;
+            color: #334155;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .dark .bot-message {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .dark .chatbot-input {
+            border-top: 1px solid #475569;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .dark .chatbot-input input {
+            background: #334155;
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .chatbot-input button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Print Styles for Leaflets */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .leaflet-content, .leaflet-content * {
+                visibility: visible;
+            }
+            .leaflet-content {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f1215;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+        }
+
+        /* Hero Section Animation */
+        .hero-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.3;
+            z-index: 0;
+            animation: blob 15s infinite;
+        }
+
+        .hero-blob:nth-child(1) {
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .hero-blob:nth-child(2) {
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -5s;
+        }
+
+        .hero-blob:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        /* Custom illustrations */
+        .medical-illustration {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .interactive-element {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .interactive-element:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
+        }
+
+        .pulse-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: ping-slow 2s infinite;
+        }
+
+        .health-meter {
+            height: 10px;
+            border-radius: 5px;
+            background: #191d22;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .health-meter-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Yoga Animation */
+        .yoga-pose {
+            transition: all 0.5s ease;
+        }
+
+        .yoga-pose:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Breathing Animation */
+        .breathing-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--teal);
+            margin: 0 auto;
+            animation: breath 4s ease-in-out infinite;
+        }
+
+        /* Progress Steps */
+        .progress-step {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            height: calc(100% - 30px);
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            z-index: 1;
+        }
+
+        .dark .progress-step:not(:last-child):after {
+            background: #475569;
+        }
+
+        /* New Styles for Improvements */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            margin: 40px 0;
+            border-radius: 3px;
+        }
+
+        .yoga-pose-detail {
+            background: rgb(28, 37, 206);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .yoga-pose-detail img {
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .color-theme-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-option.active {
+            border-color: rgb(32, 29, 199);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 dark:from-slate-900 dark:to-slate-800 dark:text-slate-200 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-md fixed w-full top-0 z-50 transition-all duration-300 animate-fade-in-down">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center animate-bounce-gentle">
+                    <i class="fas fa-heartbeat text-2xl text-primary mr-2 animate-heartbeat"></i>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Juliana Harmony Health</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Color Theme Selector -->
+                    <div class="hidden md:flex color-theme-selector">
+                        <div class="color-option bg-blue-500 active" data-theme="blue"></div>
+                        <div class="color-option bg-green-500" data-theme="green"></div>
+                        <div class="color-option bg-purple-500" data-theme="purple"></div>
+                        <div class="color-option bg-orange-500" data-theme="orange"></div>
+                    </div>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-full bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 transition-colors animate-pulse-slow">
+                        <i class="fas fa-moon text-slate-700 dark:text-amber-400"></i>
+                    </button>
+                    
+                    <button class="md:hidden text-slate-700 dark:text-slate-200" id="mobileMenuToggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#home" class="font-medium hover:text-primary transition-colors animate-bounce-gentle">Beranda</a>
+                        <a href="#about" class="font-medium hover:text-primary transition-colors animate-bounce-gentle animation-delay-300">Tentang</a>
+                        <a href="#conditions" class="font-medium hover:text-primary transition-colors animate-bounce-gentle animation-delay-500">Kondisi Kesehatan</a>
+                        <a href="#lifestyle" class="font-medium hover:text-primary transition-colors animate-bounce-gentle animation-delay-700">Gaya Hidup</a>
+                        <a href="#leaflets" class="font-medium hover:text-primary transition-colors animate-bounce-gentle animation-delay-1000">Leaflet</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-lg hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="font-medium hover:text-primary transition-colors py-2">Beranda</a>
+                <a href="#about" class="font-medium hover:text-primary transition-colors py-2">Tentang</a>
+                <a href="#conditions" class="font-medium hover:text-primary transition-colors py-2">Kondisi Kesehatan</a>
+                <a href="#lifestyle" class="font-medium hover:text-primary transition-colors py-2">Gaya Hidup</a>
+                <a href="#leaflets" class="font-medium hover:text-primary transition-colors py-2">Leaflet</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-primary via-purple-600 to-pink-600 text-white pt-24 pb-16 overflow-hidden">
+        <div class="hero-blob"></div>
+        <div class="hero-blob"></div>
+        <div class="hero-blob"></div>
+        
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up typewriter">Edukasi Berbasis Bukti</h2>
+                <p class="text-xl mb-8 animate-fade-in-up animation-delay-300">Informasi terpercaya tentang hipertensi, diabetes tipe 2, TB paru, dan gaya hidup sehat berdasarkan penelitian ilmiah terkini</p>
+                <div class="animate-fade-in-up animation-delay-500 flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#conditions" class="bg-accent hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-block animate-pulse">Pelajari Kondisi Kesehatan</a>
+                    <a href="#lifestyle" class="bg-white hover:bg-slate-100 text-primary font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-block animate-bounce-gentle">Gaya Hidup Sehat</a>
+                </div>
+            </div>
+            
+            <!-- Health Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16 animate-fade-in-up animation-delay-700">
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 interactive-element">
+                    <i class="fas fa-heartbeat text-4xl mb-4 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold">1.13 Miliar</h3>
+                    <p class="text-lg">Orang di Dunia Mengalami Hipertensi</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 interactive-element">
+                    <i class="fas fa-syringe text-4xl mb-4 animate-pulse animation-delay-300"></i>
+                    <h3 class="text-2xl font-bold">463 Juta</h3>
+                    <p class="text-lg">Orang Dewasa Hidup dengan Diabetes</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 interactive-element">
+                    <i class="fas fa-lungs text-4xl mb-4 animate-pulse animation-delay-500"></i>
+                    <h3 class="text-2xl font-bold">10 Juta</h3>
+                    <p class="text-lg">Kasus TB Baru Setiap Tahun</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 interactive-element">
+                    <i class="fas fa-apple-alt text-4xl mb-4 animate-pulse animation-delay-700"></i>
+                    <h3 class="text-2xl font-bold">80%</h3>
+                    <p class="text-lg">Kasus Dapat Dicegah dengan Gaya Hidup Sehat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white/80 dark:bg-blue-900/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 animate-fade-in-up">Tentang Juliana Harmony Health</h2>
+                <p class="text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">Juliana Harmony Health menyediakan informasi kesehatan berbasis Evidence-Based Practice (EBP) untuk membantu Anda memahami dan mengelola kondisi kesehatan secara efektif.</p>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 animate-fade-in-up">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Mengapa Memilih Juliana Harmony Health?</h3>
+                    <p class="mb-4">Juliana Harmony Health didedikasikan untuk memberikan informasi kesehatan yang akurat, terkini, dan berbasis bukti ilmiah. Kami bekerja sama dengan profesional kesehatan untuk memastikan semua konten memenuhi standar medis tertinggi.</p>
+                    <p class="mb-4">Pendekatan Evidence-Based Practice (EBP) yang kami gunakan menggabungkan bukti penelitian terbaik dengan keahlian klinis dan nilai-nilai pasien, memberikan informasi yang paling relevan dan dapat diandalkan.</p>
+                    <p class="mb-6">Dengan fokus pada hipertensi, diabetes tipe 2, TB paru, dan gaya hidup sehat, Juliana Harmony Health menjadi sumber daya yang komprehensif untuk pencegahan dan manajemen kondisi kesehatan.</p>
+                    <a href="#conditions" class="bg-gradient-to-r from-primary to-purple-600 hover:from-blue hover:to-purple-700 text-blue-500 font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md inline-block animate-bounce-gentle">Jelajahi Kondisi Kesehatan</a>
+                </div>
+                
+                <div class="md:w-1/2 animate-float">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Healthcare Professionals" class="rounded-lg shadow-lg w-full transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="text-center p-6 bg-blue dark:bg-blue-700 rounded-xl shadow-md">
+                    <i class="fas fa-book-medical text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Berbasis Bukti Ilmiah</h3>
+                    <p>Semua informasi didasarkan pada penelitian terkini dan pedoman medis terpercaya.</p>
+                </div>
+                <div class="text-center p-6 bg-blue dark:bg-blue-700 rounded-xl shadow-md">
+                    <i class="fas fa-user-md text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Dikembangkan oleh Ahli</h3>
+                    <p>Konten dikurasi dan ditinjau oleh profesional kesehatan berpengalaman.</p>
+                </div>
+                <div class="text-center p-6 bg-blue dark:bg-blue-700 rounded-xl shadow-md">
+                    <i class="fas fa-language text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Akses Mudah</h3>
+                    <p>Informasi disajikan dalam bahasa yang mudah dipahami oleh masyarakat umum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions Section - Diperbarui dengan TB Paru -->
+    <section id="conditions" class="py-16 bg-gradient-to-br from-blue to-teal-100 dark:from-blue-700 dark:to-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 animate-fade-in-up">Kondisi Kesehatan</h2>
+                <p class="text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">Pelajari tentang hipertensi, diabetes tipe 2, dan TB paru, termasuk penyebab, gejala, pencegahan, dan manajemen berbasis bukti.</p>
+            </div>
+            
+            <div class="flex justify-center mb-8 animate-fade-in-up animation-delay-500">
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full p-1 shadow-md">
+                    <button id="hypertension-tab" class="tab-btn active bg-gradient-to-r from-primary to-blue-600 text-white py-2 px-6 rounded-full transition-all duration-300 animate-pulse">Hipertensi</button>
+                    <button id="diabetes-tab" class="tab-btn py-2 px-6 rounded-full transition-all duration-300">Diabetes Tipe 2</button>
+                    <button id="tb-tab" class="tab-btn py-2 px-6 roundel-full transition-all duration-300">TB Paru</button>
+                </div>
+            </div>
+            
+            <div id="hypertension-content" class="tab-content active animate-fade-in">
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-primary to-blue-600 text-white p-6 flex items-center">
+                        <i class="fas fa-heartbeat text-3xl mr-4 animate-pulse"></i>
+                        <h3 class="text-2xl font-bold">Hipertensi (Tekanan Darah Tinggi)</h3>
+                    </div>
+                    <div class="p-6 flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="https://img.sanishtech.com/u/dd54256ece4b2a1800f32e9fedb8b972.png" alt="Hipertensi" class="rounded-lg shadow-md w-full h-64 object-cover animate-zoom-in">
+                    <!-- Ilustrasi Hipertensi dengan Animasi -->
+                            <div class="medical-illustration h-64 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-600 rounded-lg relative overflow-hidden">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-heart text-6xl text-red-500 heart-animation"></i>
+                                    <div class="absolute w-32 h-32 border-4 border-red-300 rounded-full animate-ping opacity-75"></div>
+                                </div>
+                                <div class="absolute bottom-4 left-0 right-0 text-center">
+                                    <h4 class="text-xl font-bold text-primary">Hipertensi</h4>
+                                    <p class="text-slate-600 dark:text-slate-400">Tekanan Darah Tinggi</p>
+                                </div>
+                            </div>
+
+                            <!-- Animasi Tekanan Darah -->
+                            <div class="mt-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-600 rounded-xl p-4 shadow-md interactive-element">
+                                <h4 class="text-xl font-bold text-primary mb-3 flex items-center">
+                                    <i class="fas fa-wave-square mr-2"></i> Simulator Tekanan Darah
+                                </h4>
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-primary" id="systolic-value">120</div>
+                                        <div class="text-sm text-slate-600 dark:text-slate-400">Sistolik</div>
+                                    </div>
+                                    <div class="text-2xl text-slate-400">/</div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-primary" id="diastolic-value">80</div>
+                                        <div class="text-sm text-slate-600 dark:text-slate-400">Diastolik</div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 mb-4">
+                                    <button class="flex-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 py-2 rounded-lg transition-colors" id="decrease-bp">↓ Turunkan</button>
+                                    <button class="flex-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 py-2 rounded-lg transition-colors" id="increase-bp">↑ Naikkan</button>
+                                </div>
+                                <div id="bp-status" class="text-center font-bold text-green-600">Normal</div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h4 class="text-xl font-bold text-primary mb-3">Apa itu Hipertensi?</h4>
+                            <p class="mb-4">Hipertensi adalah kondisi medis kronis dimana tekanan darah di arteri meningkat secara terus-menerus. Tekanan darah normal adalah di bawah 120/80 mmHg, sementara hipertensi didefinisikan sebagai tekanan darah 140/90 mmHg atau lebih tinggi.</p>
+                            
+                            <!-- Grafik Tekanan Darah -->
+                            <div class="mb-6 bg-white dark:bg-slate-700 rounded-lg p-4 shadow-md">
+                                <h4 class="text-lg font-bold text-primary mb-3">Klasifikasi Tekanan Darah</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                        <span class="flex-1">Normal: < 120/80 mmHg</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                        <span class="flex-1">Prehipertensi: 120-139/80-89 mmHg</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-orange-500 mr-2"></div>
+                                        <span class="flex-1">Hipertensi Stadium 1: 140-159/90-99 mmHg</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                        <span class="flex-1">Hipertensi Stadium 2: ≥ 160/100 mmHg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-primary mb-3">Faktor Risiko</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Riwayat keluarga dengan hipertensi</li>
+                                <li>Usia di atas 65 tahun</li>
+                                <li>Kelebihan berat badan atau obesitas</li>
+                                <li>Kurang aktivitas fisik</li>
+                                <li>Konsumsi garam berlebihan</li>
+                                <li>Konsumsi alkohol berlebihan</li>
+                                <li>Stres kronis</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-bold text-primary mb-3">Pencegahan dan Manajemen</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Pola makan DASH (Dietary Approaches to Stop Hypertension)</li>
+                                <li>Membatasi asupan natrium hingga kurang dari 2.300 mg/hari</li>
+                                <li>Aktivitas fisik teratur (150 menit/minggu intensitas sedang)</li>
+                                <li>Mempertahankan berat badan sehat</li>
+                                <li>Membatasi konsumsi alkohol</li>
+                                <li>Berhenti merokok</li>
+                                <li>Manajemen stres</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border-l-4 border-primary mt-6 mx-6 mb-6">
+                        <p class="text-sm"><strong>Referensi:</strong> Whelton PK, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. Journal of the American College of Cardiology. 2018;71(19):e127-e248.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="diabetes-content" class="tab-content hidden animate-fade-in">
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-secondary to-green-600 text-white p-6 flex items-center">
+                        <i class="fas fa-syringe text-3xl mr-4 animate-pulse"></i>
+                        <h3 class="text-2xl font-bold">Diabetes Melitus Tipe 2</h3>
+                    </div>
+                    <div class="p-6 flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="https://img.sanishtech.com/u/6d735e82069434a1d2a150ae110485a5.png" alt="Diabetes" class="rounded-lg shadow-md w-full h-64 object-cover animate-zoom-in">
+                            
+                            <!-- Ilustrasi Diabetes dengan Animasi -->
+                            <div class="medical-illustration h-64 flex items-center justify-center bg-gradient-to-br from-green-50 to-teal-50 dark:from-slate-700 dark:to-slate-600 rounded-lg relative overflow-hidden">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-syringe text-6xl text-green-500 insulin-animation"></i>
+                                    <i class="fas fa-cube text-3xl text-blue-500 bacteria-animation absolute" style="top: 30%; left: 30%;"></i>
+                                    <i class="fas fa-cube text-3xl text-blue-500 bacteria-animation absolute" style="top: 60%; right: 30%; animation-delay: -2s;"></i>
+                                </div>
+                                <div class="absolute bottom-4 left-0 right-0 text-center">
+                                    <h4 class="text-xl font-bold text-secondary">Diabetes Tipe 2</h4>
+                                    <p class="text-slate-600 dark:text-slate-400">Gangguan Metabolisme Glukosa</p>
+                                </div>
+                            </div>
+
+                            <!-- Fitur Interaktif Diabetes -->
+                            <div class="mt-6 bg-gradient-to-r from-green-50 to-teal-50 dark:from-slate-700 dark:to-slate-600 rounded-xl p-4 shadow-md interactive-element">
+                                <h4 class="text-xl font-bold text-primary mb-3 flex items-center">
+                                    <i class="fas fa-chart-line mr-2"></i> Simulator Gula Darah
+                                </h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Asupan Karbohidrat (gram)</label>
+                                        <input type="range" min="0" max="150" value="75" class="w-full" id="carbs-slider">
+                                        <div class="flex justify-between text-xs">
+                                            <span>0</span>
+                                            <span id="carbs-value">75g</span>
+                                            <span>150</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Aktivitas Fisik</label>
+                                        <input type="range" min="0" max="120" value="30" class="w-full" id="exercise-slider">
+                                        <div class="flex justify-between text-xs">
+                                            <span>0 menit</span>
+                                            <span id="exercise-value">30 menit</span>
+                                            <span>120 menit</span>
+                                        </div>
+                                    </div>
+                                    <button id="simulate-sugar" class="w-full bg-gradient-to-r from-secondary to-green-600 hover:from-green-700 hover:to-green-800 text-white font-bold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105">
+                                        Simulasikan
+                                    </button>
+                                    <div id="sugar-result" class="hidden mt-4 p-3 rounded-lg bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
+                                        <p class="font-bold">Perkiraan Gula Darah: <span id="sugar-level"></span> mg/dL</p>
+                                        <p class="text-sm mt-2" id="sugar-suggestion"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h4 class="text-xl font-bold text-primary mb-3">Apa itu Diabetes Tipe 2?</h4>
+                            <p class="mb-4">Diabetes melitus tipe 2 adalah kondisi kronis yang mempengaruhi cara tubuh memproses gula darah (glukosa). Pada diabetes tipe 2, tubuh menjadi resisten terhadap insulin atau tidak menghasilkan cukup insulin.</p>
+                            
+                            <!-- Grafik Kadar Gula Darah -->
+                            <div class="mb-6 bg-white dark:bg-slate-700 rounded-lg p-4 shadow-md">
+                                <h4 class="text-lg font-bold text-primary mb-3">Kadar Gula Darah Normal</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                        <span class="flex-1">Puasa: < 100 mg/dL</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                        <span class="flex-1">2 jam setelah makan: < 140 mg/dL</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                        <span class="flex-1">HbA1c: < 5.7%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-primary mb-3">Faktor Risiko</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Kelebihan berat badan atau obesitas</li>
+                                <li>Distribusi lemak perut yang tinggi</li>
+                                <li>Kurang aktivitas fisik</li>
+                                <li>Riwayat keluarga diabetes</li>
+                                <li>Usia di atas 45 tahun</li>
+                                <li>Hipertensi</li>
+                                <li>Kadar kolesterol abnormal</li>
+                                <li>Riwayat diabetes gestasional</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-bold text-primary mb-3">Pencegahan dan Manajemen</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Penurunan berat badan (5-10% dari berat badan awal)</li>
+                                <li>Aktivitas fisik teratur (150 menit/minggu intensitas sedang)</li>
+                                <li>Diet seimbang kaya serat dan rendah lemak jenuh</li>
+                                <li>Pemantauan kadar gula darah secara teratur</li>
+                                <li>Pengobatan sesuai resep dokter</li>
+                                <li>Pemeriksaan kesehatan rutin</li>
+                                <li>Perawatan kaki untuk mencegah komplikasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border-l-4 border-secondary mt-6 mx-6 mb-6">
+                        <p class="text-sm"><strong>Referensi:</strong> American Diabetes Association. Standards of Medical Care in Diabetes—2022. Diabetes Care. 2022;45(Supplement 1):S1-S264.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Konten TB Paru -->
+            <div id="tb-content" class="tab-content hidden animate-fade-in">
+                <div class="bg-white-80 dark:bg-amber-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-amber to-amber text-white p-6 flex items-center">
+                        <i class="fas fa-lungs text-3xl mr-4 animate-pulse"></i>
+                        <h3 class="text-2xl font-bold">Tuberkulosis (TB) Paru</h3>
+                    </div>
+                    <div class="p-6 flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="https://img.sanishtech.com/u/38da80f83f79c5a0c0e861c527d72e9b.png" alt="TB Paru" class="rounded-lg shadow-md w-full h-64 object-cover animate-zoom-in">
+                            
+                            <!-- Ilustrasi TB Paru dengan Animasi -->
+                            <div class="medical-illustration h-64 flex items-center justify-center bg-gradient-to-br from-amber to-orange-50 dark:from-slate-700 dark:to-slate-600 rounded-lg relative overflow-hidden">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-lungs text-6xl text-amber-500 lungs-animation"></i>
+                                    <div class="tb-bacteria"></div>
+                                    <div class="tb-bacteria"></div>
+                                    <div class="tb-bacteria"></div>
+                                </div>
+                                <div class="absolute bottom-4 left-0 right-0 text-center">
+                                    <h4 class="text-xl font-bold text-amber dark:text-amber-400">Tuberkulosis Paru</h4>
+                                    <p class="text-amber dark:text-amber-300">Penyakit Infeksi Bakteri Mycobacterium tuberculosis</p>
+                                </div>
+                            </div>
+
+                            <!-- Fitur Interaktif TB Paru -->
+                            <div class="mt-6 bg-gradient-to-r from-blue to-white dark:blue dark:to-blue-600 rounded-xl p-4 shadow-md interactive-element">
+                                <h4 class="text-xl font-bold text-amber dark:text-amber mb-3 flex items-center">
+                                    <i class="fas fa-virus mr-2"></i> Kalkulator Risiko TB
+                                </h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Kontak dengan Penderita TB</label>
+                                        <div class="flex space-x-4">
+                                            <button class="risk-btn bg-amber dark:bg-black px-3 py-1 rounded-full text-sm" data-risk="yes">Ya</button>
+                                            <button class="risk-btn bg-amber text-black px-3 py-1 rounded-full text-sm" data-risk="no">Tidak</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Status HIV</label>
+                                        <div class="flex space-x-4">
+                                            <button class="hiv-btn bg-amber dark:black px-3 py-1 rounded-full text-sm" data-hiv="positive">Positif</button>
+                                            <button class="hiv-btn bg-amber text-black px-3 py-1 rounded-full text-sm" data-hiv="negative">Negatif</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Batuk > 2 Minggu</label>
+                                        <div class="flex space-x-4">
+                                            <button class="cough-btn bg-amber dark:bg-black px-3 py-1 rounded-full text-sm" data-cough="yes">Ya</button>
+                                            <button class="cough-btn bg-amber text-black px-3 py-1 rounded-full text-sm" data-cough="no">Tidak</button>
+                                        </div>
+                                    </div>
+                                    <button id="calculate-tb-risk" class="w-full bg-gradient-to-r from-amber to-amber hover:blue hover:to-blue-600 text-white font-bold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105">
+                                        Hitung Risiko
+                                    </button>
+                                    <div id="tb-risk-result" class="hidden mt-4 p-3 rounded-lg bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200">
+                                        <p class="font-bold">Hasil: <span id="tb-risk-level"></span></p>
+                                        <p class="text-sm mt-2" id="tb-risk-suggestion"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h4 class="text-xl font-bold text-amber dark:text-amber-400 mb-3">Apa itu TB Paru?</h4>
+                            <p class="mb-4">Tuberkulosis (TB) paru adalah penyakit infeksi menular yang disebabkan oleh bakteri Mycobacterium tuberculosis yang terutama menyerang paru-paru, tetapi dapat juga menyebar ke organ lain.</p>
+                            
+                            <!-- Grafik Gejala TB -->
+                            <div class="mb-6 bg-blue dark:bg-blue-900/80 rounded-lg p-4 shadow-md">
+                                <h4 class="text-lg font-bold text-amber dark:text-amber-400 mb-3">Gejala Utama TB Paru</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Batuk berdahak > 2 minggu</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Dahak bercampur darah</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Sesak napas dan nyeri dada</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Demam ringan terutama sore hari</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Berkeringat di malam hari</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                        <span class="flex-1">Penurunan berat badan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-amber dark:text-amber-400 mb-3">Faktor Risiko</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Kontak erat dengan penderita TB aktif</li>
+                                <li>Sistem imun lemah (HIV/AIDS, diabetes, gagal ginjal)</li>
+                                <li>Penggunaan obat imunosupresan jangka panjang</li>
+                                <li>Malnutrisi atau kekurangan gizi</li>
+                                <li>Perokok aktif dan konsumsi alkohol berlebihan</li>
+                                <li>Tinggal di lingkungan padat dan ventilasi buruk</li>
+                                <li>Tenaga kesehatan yang merawat pasien TB</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-bold text-amber dark:text-amber-400 mb-3">Pencegahan dan Manajemen</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li>Vaksinasi BCG untuk bayi dan anak-anak</li>
+                                <li>Pengobatan tepat dan tuntas (6-9 bulan)</li>
+                                <li>Pengawasan minum obat langsung (DOTS)</li>
+                                <li>Ventilasi rumah yang baik dan pencahayaan cukup</li>
+                                <li>Menutup mulut saat batuk atau bersin</li>
+                                <li>Pemeriksaan kontak erat dengan penderita TB</li>
+                                <li>Gizi seimbang untuk meningkatkan imunitas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-amber-500 dark:bg-amber-900/30 p-4 rounded-lg border-l-4 border-amber-500 mt-6 mx-6 mb-6">
+                        <p class="text-sm"><strong>Referensi:</strong> World Health Organization. Global Tuberculosis Report 2023. Geneva: World Health Organization; 2023.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Section - Diperbarui dengan Yoga dan Meditasi -->
+    <section id="lifestyle" class="py-16 bg-gradient-to-br from-purple to-pink-50 dark:from-slate-800 dark:to-slate-700">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 animate-fade-in-up">Gaya Hidup Sehat</h2>
+                <p class="text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">Pola hidup sehat berbasis bukti untuk mencegah dan mengelola hipertensi, diabetes tipe 2, dan TB paru.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up interactive-element">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Healthy Diet" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Pola Makan Sehat</h3>
+                        <p class="mb-4">Diet DASH dan Mediterania telah terbukti efektif dalam menurunkan tekanan darah dan mengontrol gula darah. Fokus pada buah, sayuran, biji-bijian, protein tanpa lemak, dan membatasi garam, gula, dan lemak jenuh.</p>
+                        <div class="flex justify-between">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">5-9</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Porsi Sayur & Buah/Hari</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">&lt;2300mg</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Natrium/Hari</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up animation-delay-300 interactive-element">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Physical Activity" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Aktivitas Fisik</h3>
+                        <p class="mb-4">Aktivitas fisik teratur membantu menurunkan tekanan darah, meningkatkan sensitivitas insulin, dan mengontrol berat badan. Kombinasikan latihan aerobik dan resistensi untuk hasil optimal.</p>
+                        <div class="flex justify-between">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">150</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Menit/Minggu</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">2</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Hari Latihan Kekuatan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up animation-delay-500 interactive-element">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Stress Management" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Manajemen Stres</h3>
+                        <p class="mb-4">Stres kronis dapat meningkatkan tekanan darah dan mempengaruhi kontrol gula darah. Teknik relaksasi seperti meditasi, pernapasan dalam, dan yoga terbukti efektif mengurangi stres.</p>
+                        <div class="flex justify-between">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">7-9</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Jam Tidur/Hari</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">10-15</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-400">Menit Meditasi/Hari</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Yoga dan Meditasi Section -->
+            <div class="mt-16 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-primary mb-6 text-center">Teknik Relaksasi dan Yoga untuk Kesehatan</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Teknik Pernapasan -->
+                    <div class="bg-gradient-to-br from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-600 rounded-xl p-6 shadow-md">
+                        <h4 class="text-xl font-bold text-teal-700 dark:text-teal-400 mb-4 flex items-center">
+                            <i class="fas fa-wind mr-2"></i> Teknik Pernapasan 4-7-8
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="progress-step">
+                                <div class="step-number">1</div>
+                                <div>
+                                    <h5 class="font-bold">Tarik Napas</h5>
+                                    <p class="text-sm">Tarik napas melalui hidung selama 4 detik</p>
+                                </div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-number">2</div>
+                                <div>
+                                    <h5 class="font-bold">Tahan Napas</h5>
+                                    <p class="text-sm">Tahan napas selama 7 detik</p>
+                                </div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-number">3</div>
+                                <div>
+                                    <h5 class="font-bold">Hembuskan Napas</h5>
+                                    <p class="text-sm">Hembuskan napas melalui mulut selama 8 detik</p>
+                                </div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-number">4</div>
+                                <div>
+                                    <h5 class="font-bold">Ulangi</h5>
+                                    <p class="text-sm">Ulangi siklus ini 4 kali</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="breathing-circle"></div>
+                            <p class="mt-2 text-sm text-teal-600 dark:text-teal-400">Ikuti lingkaran bernapas ini</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Posisi Yoga -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-slate-700 dark:to-slate-600 rounded-xl p-6 shadow-md">
+                        <h4 class="text-xl font-bold text-purple-700 dark:text-purple-400 mb-4 flex items-center">
+                            <i class="fas fa-spa mr-2"></i> Posisi Yoga untuk Pemula
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center yoga-pose">
+                                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-child text-purple-600 dark:text-purple-400 text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-sm">Pose Anak</h5>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Menenangkan pikiran</p>
+                            </div>
+                            <div class="text-center yoga-pose">
+                                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-mountain text-purple-600 dark:text-purple-400 text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-sm">Pose Gunung</h5>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Meningkatkan postur</p>
+                            </div>
+                            <div class="text-center yoga-pose">
+                                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-tree text-purple-600 dark:text-purple-400 text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-sm">Pose Pohon</h5>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Meningkatkan keseimbangan</p>
+                            </div>
+                            <div class="text-center yoga-pose">
+                                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-cat text-purple-600 dark:text-purple-400 text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-sm">Pose Kucing-Sapi</h5>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Fleksibilitas tulang belakang</p>
+                            </div>
+                        </div>
+                        <button id="show-yoga-details" class="w-full mt-4 bg-gradient-to-r from-purple to-pink hover:from-purple hover:to-pink text-white font-bold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105">
+                            Pelajari Posisi Yoga
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Detail Yoga Poses -->
+                <div id="yoga-details" class="mt-8 hidden">
+                    <h4 class="text-xl font-bold text-primary mb-4">Detail Posisi Yoga untuk Kesehatan</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="yoga-pose-detail">
+                            <h5 class="font-bold text-lg mb-2">1. Pose Anak (Balasana)</h5>
+                            <p class="mb-2">Pose menenangkan yang membantu meredakan stres dan kecemasan.</p>
+                            <p class="text-sm mb-3"><strong>Cara melakukan:</strong> Duduk berlutut, rentangkan tubuh ke depan dengan dahi menyentuh matras, dan lengan direntangkan ke depan atau di samping tubuh.</p>
+                            <p class="text-sm"><strong>Manfaat:</strong> Menenangkan sistem saraf, meregangkan punggung, pinggul, dan paha.</p>
+                        </div>
+                        <div class="yoga-pose-detail">
+                            <h5 class="font-bold text-lg mb-2">2. Pose Gunung (Tadasana)</h5>
+                            <p class="mb-2">Pose dasar yang meningkatkan postur tubuh dan keseimbangan.</p>
+                            <p class="text-sm mb-3"><strong>Cara melakukan:</strong> Berdiri tegak dengan kaki rapat, bahu rileks, dan tangan di samping tubuh atau disatukan di depan dada.</p>
+                            <p class="text-sm"><strong>Manfaat:</strong> Meningkatkan postur, memperkuat kaki, dan meningkatkan kesadaran tubuh.</p>
+                        </div>
+                        <div class="yoga-pose-detail">
+                            <h5 class="font-bold text-lg mb-2">3. Pose Pohon (Vrksasana)</h5>
+                            <p class="mb-2">Pose keseimbangan yang membantu meningkatkan fokus dan konsentrasi.</p>
+                            <p class="text-sm mb-3"><strong>Cara melakukan:</strong> Berdiri dengan satu kaki, tempelkan telapak kaki lainnya di paha dalam, dan satukan tangan di depan dada atau angkat ke atas.</p>
+                            <p class="text-sm"><strong>Manfaat:</strong> Meningkatkan keseimbangan, memperkuat kaki dan pergelangan kaki, serta meningkatkan fokus.</p>
+                        </div>
+                        <div class="yoga-pose-detail">
+                            <h5 class="font-bold text-lg mb-2">4. Pose Kucing-Sapi (Marjaryasana-Bitilasana)</h5>
+                            <p class="mb-2">Pose dinamis yang meningkatkan fleksibilitas tulang belakang.</p>
+                            <p class="text-sm mb-3"><strong>Cara melakukan:</strong> Mulai dengan posisi merangkak, lengkungkan punggung ke atas (pose kucing) lalu turunkan perut ke bawah (pose sapi).</p>
+                            <p class="text-sm"><strong>Manfaat:</strong> Meningkatkan fleksibilitas tulang belakang, meregangkan leher dan torso, serta meningkatkan sirkulasi.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button id="hide-yoga-details" class="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded transition-colors">
+                            Tutup Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaflets Section -->
+    <section id="leaflets" class="py-16 bg-gradient-to-br from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-600">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 animate-fade-in-up">Leaflet Edukasi Kesehatan</h2>
+                <p class="text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">Download leaflet informatif tentang hipertensi, diabetes, dan TB paru untuk edukasi pasien dan masyarakat.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl animate-fade-in-up interactive-element">
+                    <div class="h-48 bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-6xl text-white animate-bounce-gentle"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Leaflet Hipertensi</h3>
+                        <p class="mb-4">Informasi lengkap tentang hipertensi, faktor risiko, pencegahan, dan manajemen berdasarkan pedoman terbaru.</p>
+                        <button class="leaflet-btn bg-gradient-to-r from-primary to-blue-600 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded transition-colors w-full animate-pulse" data-leaflet="hypertension">Download PDF</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl animate-fade-in-up animation-delay-300 interactive-element">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-green-600 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-6xl text-white animate-bounce-gentle"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Leaflet Diabetes</h3>
+                        <p class="mb-4">Panduan lengkap tentang diabetes tipe 2, gejala, komplikasi, dan strategi pengelolaan gaya hidup.</p>
+                        <button class="leaflet-btn bg-gradient-to-r from-secondary to-green-600 hover:from-green-700 hover:to-green-800 text-white font-bold py-2 px-4 rounded transition-colors w-full animate-pulse" data-leaflet="diabetes">Download PDF</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl animate-fade-in-up animation-delay-500 interactive-element">
+                    <div class="h-48 bg-gradient-to-r from-amber to-orange flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-6xl text-white animate-bounce-gentle"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Leaflet TB Paru</h3>
+                        <p class="mb-4">Edukasi tentang tuberkulosis paru, penularan, gejala, pengobatan, dan pencegahan berdasarkan evidence-based practice.</p>
+                        <button class="leaflet-btn bg-gradient-to-r from-amber to-orange-500 hover:from-amber hover:to-orange-600 text-white font-bold py-2 px-4 rounded transition-colors w-full animate-pulse" data-leaflet="tb">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leaflet Content (Hidden until print) -->
+            <div id="leaflet-content" class="hidden leaflet-content bg-white p-8 rounded-lg shadow-lg">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Juliana Harmony Health</h3>
+                    <p class="mb-4">Juliana Harmony Health adalah platform edukasi kesehatan berbasis Evidence-Based Practice (EBP) yang menyediakan informasi terpercaya tentang hipertensi, diabetes tipe 2, TB paru, dan gaya hidup sehat.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-slate-700 hover:bg-slate-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-slate-700 hover:bg-slate-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-slate-700 hover:bg-slate-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">Tentang Kami</a></li>
+                        <li><a href="#conditions" class="hover:text-accent transition-colors">Kondisi Kesehatan</a></li>
+                        <li><a href="#lifestyle" class="hover:text-accent transition-colors">Gaya Hidup Sehat</a></li>
+                        <li><a href="#leaflets" class="hover:text-accent transition-colors">Leaflet</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
+                            <span>Gg. Dewi Sri No. 28</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-accent"></i>
+                            <span>(+62) 813-3925-4466</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <span>info@julianaharmonyhealth.id</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-accent"></i>
+                            <span>Senin - Jumat: 9:00 - 17:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-700 text-center">
+                <p>&copy; 2025 Juliana Harmony Health - Edukasi Kesehatan Berbasis Bukti.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot text-2xl animate-tada"></i>
+        </div>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3 class="font-bold">Juliana Harmony Health Assistant</h3>
+                <button id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Halo! Saya Juliana Harmony Health. Ada yang bisa saya bantu terkait hipertensi, diabetes, TB paru, atau gaya hidup sehat?
+                </div>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ketik pertanyaan Anda...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or respect OS setting
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun text-amber-400"></i>';
+        } else {
+            htmlElement.classList.remove('dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon text-slate-700"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                darkModeToggle.innerHTML = '<i class="fas fa-sun text-amber-400"></i>';
+            } else {
+                localStorage.theme = 'light';
+                darkModeToggle.innerHTML = '<i class="fas fa-moon text-slate-700"></i>';
+            }
+        });
+
+        // Color Theme Selector
+        const colorOptions = document.querySelectorAll('.color-option');
+        
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.getAttribute('data-theme');
+                
+                // Remove active class from all options
+                colorOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+                
+                // Apply theme
+                applyColorTheme(theme);
+            });
+        });
+        
+        function applyColorTheme(theme) {
+            // Remove existing theme classes
+            document.body.classList.remove('theme-blue', 'theme-green', 'theme-purple', 'theme-orange');
+            
+            // Add new theme class
+            document.body.classList.add(`theme-${theme}`);
+            
+            // Update CSS variables based on theme
+            const root = document.documentElement;
+            
+            switch(theme) {
+                case 'blue':
+                    root.style.setProperty('--primary', '#2563eb');
+                    root.style.setProperty('--secondary', '#16a34a');
+                    root.style.setProperty('--accent', '#ea580c');
+                    break;
+                case 'green':
+                    root.style.setProperty('--primary', '#16a34a');
+                    root.style.setProperty('--secondary', '#2563eb');
+                    root.style.setProperty('--accent', '#d97706');
+                    break;
+                case 'purple':
+                    root.style.setProperty('--primary', '#7c3aed');
+                    root.style.setProperty('--secondary', '#db2777');
+                    root.style.setProperty('--accent', '#0d9488');
+                    break;
+                case 'orange':
+                    root.style.setProperty('--primary', '#ea580c');
+                    root.style.setProperty('--secondary', '#16a34a');
+                    root.style.setProperty('--accent', '#7c3aed');
+                    break;
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Functionality
+        const hypertensionTab = document.getElementById('hypertension-tab');
+        const diabetesTab = document.getElementById('diabetes-tab');
+        const tbTab = document.getElementById('tb-tab');
+        const hypertensionContent = document.getElementById('hypertension-content');
+        const diabetesContent = document.getElementById('diabetes-content');
+        const tbContent = document.getElementById('tb-content');
+        
+        hypertensionTab.addEventListener('click', () => {
+            setActiveTab(hypertensionTab, hypertensionContent);
+        });
+        
+        diabetesTab.addEventListener('click', () => {
+            setActiveTab(diabetesTab, diabetesContent);
+        });
+        
+        tbTab.addEventListener('click', () => {
+            setActiveTab(tbTab, tbContent);
+        });
+
+        function setActiveTab(activeTab, activeContent) {
+            // Remove active state from all tabs
+            [hypertensionTab, diabetesTab, tbTab].forEach(tab => {
+                tab.classList.remove('active', 'bg-gradient-to-r', 'from-primary', 'to-blue-600', 'from-secondary', 'to-green-600', 'from-amber-500', 'to-orange-500', 'text-white');
+                tab.classList.add('bg-transparent', 'text-slate-700', 'dark:text-slate-300');
+            });
+            
+            // Hide all content
+            [hypertensionContent, diabetesContent, tbContent].forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Set active tab and content
+            if (activeTab === hypertensionTab) {
+                activeTab.classList.add('active', 'bg-gradient-to-r', 'from-primary', 'to-blue-600', 'text-white');
+            } else if (activeTab === diabetesTab) {
+                activeTab.classList.add('active', 'bg-gradient-to-r', 'from-secondary', 'to-green-600', 'text-white');
+            } else if (activeTab === tbTab) {
+                activeTab.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+            }
+            
+            activeContent.classList.remove('hidden');
+            
+            // Add animation
+            activeContent.classList.add('animate-fade-in');
+            setTimeout(() => {
+                activeContent.classList.remove('animate-fade-in');
+            }, 500);
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Chatbot Functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const sendMessage = document.getElementById('sendMessage');
+        
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.style.display = 'flex';
+            chatbotWindow.classList.add('animate-bounce-in');
+            setTimeout(() => {
+                chatbotWindow.classList.remove('animate-bounce-in');
+            }, 600);
+        });
+        
+        closeChatbot.addEventListener('click', () => {
+            chatbotWindow.style.display = 'none';
+        });
+        
+        // Chatbot responses
+        const chatbotResponses = {
+            'hi': 'Halo! Ada yang bisa saya bantu terkait hipertensi, diabetes, TB paru, atau gaya hidup sehat?',
+            'hello': 'Halo! Ada yang bisa saya bantu terkait hipertensi, diabetes, TB paru, atau gaya hidup sehat?',
+            'hipertensi': 'Hipertensi adalah kondisi tekanan darah tinggi. Faktor risiko termasuk riwayat keluarga, usia, obesitas, dan pola makan tinggi garam. Untuk informasi lebih lanjut, kunjungi bagian "Kondisi Kesehatan" di website ini.',
+            'tekanan darah': 'Tekanan darah normal adalah di bawah 120/80 mmHg. Hipertensi didefinisikan sebagai tekanan darah 140/90 mmHg atau lebih tinggi. Untuk mengelola hipertensi, disarankan pola makan DASH, aktivitas fisik teratur, dan manajemen stres.',
+            'diabetes': 'Diabetes tipe 2 adalah kondisi dimana tubuh tidak menggunakan insulin dengan efektif. Faktor risiko termasuk obesitas, riwayat keluarga, dan kurang aktivitas fisik. Untuk informasi lebih lanjut, kunjungi bagian "Kondisi Kesehatan" di website ini.',
+            'gula darah': 'Kadar gula darah normal saat puasa adalah di bawah 100 mg/dL. Untuk mengelola diabetes, penting untuk menjaga pola makan sehat, aktivitas fisik teratur, dan memantau kadar gula darah secara berkala.',
+            'tb': 'Tuberkulosis (TB) paru adalah penyakit infeksi menular yang disebabkan oleh bakteri Mycobacterium tuberculosis. Gejala termasuk batuk berdahak lebih dari 2 minggu, demam, dan penurunan berat badan. Untuk informasi lebih lanjut, kunjungi bagian "Kondisi Kesehatan" di website ini.',
+            'tuberkulosis': 'Tuberkulosis (TB) paru adalah penyakit infeksi menular yang disebabkan oleh bakteri Mycobacterium tuberculosis. Pengobatan TB membutuhkan waktu 6-9 bulan dengan pengawasan ketat.',
+            'diet': 'Pola makan sehat untuk hipertensi dan diabetes termasuk diet DASH dan Mediterania yang kaya buah, sayuran, biji-bijian, dan protein tanpa lemak, serta membatasi garam, gula, dan lemak jenuh.',
+            'olahraga': 'Aktivitas fisik yang disarankan adalah 150 menit per minggu intensitas sedang atau 75 menit intensitas tinggi, ditambah latihan kekuatan 2 hari per minggu.',
+            'yoga': 'Yoga dapat membantu mengurangi stres dan meningkatkan fleksibilitas. Posisi seperti anak, gunung, dan pohon baik untuk pemula.',
+            'stres': 'Manajemen stres penting untuk kesehatan. Teknik seperti meditasi, pernapasan dalam, yoga, dan tidur yang cukup (7-9 jam per malam) dapat membantu mengurangi stres.',
+            'obat': 'Penggunaan obat harus sesuai dengan resep dokter. Jangan mengubah dosis atau menghentikan obat tanpa konsultasi dengan tenaga kesehatan.',
+            'terima kasih': 'Sama-sama! Jika ada pertanyaan lain, jangan ragu untuk bertanya.',
+            'default': 'Maaf, saya tidak mengerti pertanyaan Anda. Coba tanyakan tentang hipertensi, diabetes, TB paru, atau gaya hidup sehat.'
+        };
+        
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageElement.textContent = message;
+            chatbotMessages.appendChild(messageElement);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        function getBotResponse(userMessage) {
+            userMessage = userMessage.toLowerCase();
+            
+            for (const keyword in chatbotResponses) {
+                if (userMessage.includes(keyword)) {
+                    return chatbotResponses[keyword];
+                }
+            }
+            
+            return chatbotResponses['default'];
+        }
+        
+        function handleUserMessage() {
+            const userMessage = chatbotInput.value.trim();
+            if (userMessage === '') return;
+            
+            addMessage(userMessage, true);
+            chatbotInput.value = '';
+            
+            // Simulate typing delay
+            setTimeout(() => {
+                const botResponse = getBotResponse(userMessage);
+                addMessage(botResponse, false);
+            }, 1000);
+        }
+        
+        sendMessage.addEventListener('click', handleUserMessage);
+        
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserMessage();
+            }
+        });
+
+        // Leaflet PDF Generation
+        const leafletButtons = document.querySelectorAll('.leaflet-btn');
+        const leafletContent = document.getElementById('leaflet-content');
+        
+        const leafletData = {
+            hypertension: {
+                title: 'Leaflet Edukasi Hipertensi',
+                content: `
+                    <div class="text-center mb-6">
+                        <h1 class="text-3xl font-bold text-primary mb-2">Hipertensi (Tekanan Darah Tinggi)</h1>
+                        <p class="text-lg">Informasi untuk Pasien dan Masyarakat</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Apa itu Hipertensi?</h2>
+                            <p class="mb-4">Hipertensi adalah kondisi medis kronis dimana tekanan darah di arteri meningkat secara terus-menerus.</p>
+                            <p><strong>Klasifikasi Tekanan Darah:</strong></p>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Normal: < 120/80 mmHg</li>
+                                <li>Prehipertensi: 120-139/80-89 mmHg</li>
+                                <li>Hipertensi Stadium 1: 140-159/90-99 mmHg</li>
+                                <li>Hipertensi Stadium 2: ≥ 160/100 mmHg</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Faktor Risiko</h2>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Riwayat keluarga dengan hipertensi</li>
+                                <li>Usia di atas 65 tahun</li>
+                                <li>Kelebihan berat badan atau obesitas</li>
+                                <li>Kurang aktivitas fisik</li>
+                                <li>Konsumsi garam berlebihan</li>
+                                <li>Konsumsi alkohol berlebihan</li>
+                                <li>Stres kronis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-primary mb-3">Pencegahan dan Manajemen</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="font-bold mb-2">Pola Makan Sehat</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>Diet DASH (Dietary Approaches to Stop Hypertension)</li>
+                                    <li>Batasi natrium < 2.300 mg/hari</li>
+                                    <li>Tingkatkan konsumsi buah dan sayuran</li>
+                                    <li>Pilih produk susu rendah lemak</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-2">Aktivitas Fisik</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>150 menit/minggu intensitas sedang</li>
+                                    <li>Latihan aerobik dan kekuatan</li>
+                                    <li>Aktivitas sehari-hari (berjalan, naik tangga)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <p class="text-sm"><strong>Referensi:</strong> Whelton PK, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. Journal of the American College of Cardiology. 2018;71(19):e127-e248.</p>
+                    </div>
+                `
+            },
+            diabetes: {
+                title: 'Leaflet Edukasi Diabetes Tipe 2',
+                content: `
+                    <div class="text-center mb-6">
+                        <h1 class="text-3xl font-bold text-primary mb-2">Diabetes Melitus Tipe 2</h1>
+                        <p class="text-lg">Informasi untuk Pasien dan Masyarakat</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Apa itu Diabetes Tipe 2?</h2>
+                            <p class="mb-4">Diabetes melitus tipe 2 adalah kondisi kronis yang mempengaruhi cara tubuh memproses gula darah (glukosa).</p>
+                            <p><strong>Kadar Gula Darah Normal:</strong></p>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Puasa: < 100 mg/dL</li>
+                                <li>2 jam setelah makan: < 140 mg/dL</li>
+                                <li>HbA1c: < 5.7%</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Faktor Risiko</h2>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Kelebihan berat badan atau obesitas</li>
+                                <li>Distribusi lemak perut yang tinggi</li>
+                                <li>Kurang aktivitas fisik</li>
+                                <li>Riwayat keluarga diabetes</li>
+                                <li>Usia di atas 45 tahun</li>
+                                <li>Hipertensi</li>
+                                <li>Kadar kolesterol abnormal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-primary mb-3">Pencegahan dan Manajemen</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="font-bold mb-2">Pengaturan Pola Makan</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>Kontrol porsi makanan</li>
+                                    <li>Batasi gula dan karbohidrat sederhana</li>
+                                    <li>Tingkatkan serat dari buah, sayuran, biji-bijian</li>
+                                    <li>Pilih protein tanpa lemak</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-2">Aktivitas Fisik</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>150 menit/minggu intensitas sedang</li>
+                                    <li>Latihan resistensi 2-3 kali/minggu</li>
+                                    <li>Kurangi waktu duduk berkepanjangan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <p class="text-sm"><strong>Referensi:</strong> American Diabetes Association. Standards of Medical Care in Diabetes—2022. Diabetes Care. 2022;45(Supplement 1):S1-S264.</p>
+                    </div>
+                `
+            },
+            tb: {
+                title: 'Leaflet Edukasi Tuberkulosis Paru',
+                content: `
+                    <div class="text-center mb-6">
+                        <h1 class="text-3xl font-bold text-primary mb-2">Tuberkulosis (TB) Paru</h1>
+                        <p class="text-lg">Informasi untuk Pasien dan Masyarakat</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Apa itu TB Paru?</h2>
+                            <p class="mb-4">Tuberkulosis (TB) adalah penyakit menular yang disebabkan oleh bakteri Mycobacterium tuberculosis yang paling sering menyerang paru-paru.</p>
+                            <p><strong>Gejala Utama:</strong></p>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Batuk berdahak lebih dari 2 minggu</li>
+                                <li>Dahak bercampur darah</li>
+                                <li>Sesak napas</li>
+                                <li>Nyeri dada</li>
+                                <li>Demam ringan terutama sore hari</li>
+                                <li>Berkeringat di malam hari</li>
+                                <li>Penurunan berat badan</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">Penularan dan Pencegahan</h2>
+                            <p class="mb-2"><strong>Cara Penularan:</strong></p>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Melalui droplet di udara saat penderita batuk, bersin, atau berbicara</li>
+                                <li>Faktor risiko: kontak erat dengan penderita, daya tahan tubuh rendah</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>Pencegahan:</strong></p>
+                            <ul class="list-disc pl-5">
+                                <li>Menutup mulut saat batuk/bersin</li>
+                                <li>Ventilasi rumah yang baik</li>
+                                <li>Imunisasi BCG untuk bayi</li>
+                                <li>Pengobatan lengkap bagi penderita</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-primary mb-3">Pengobatan TB</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="font-bold mb-2">Prinsip Pengobatan</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>Kombinasi beberapa jenis OAT (Obat Anti Tuberkulosis)</li>
+                                    <li>Pengobatan jangka panjang (6-9 bulan)</li>
+                                    <li>Pengawasan langsung (DOTS)</li>
+                                    <li>Tidak boleh putus berobat</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-2">Efek Samping OAT</h3>
+                                <ul class="list-disc pl-5">
+                                    <li>Mual, muntah, nyeri perut</li>
+                                    <li>Kesemutan atau rasa terbakar di tangan/kaki</li>
+                                    <li>Gangguan penglihatan</li>
+                                    <li>Kulit kuning, urin berwarna gelap</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <p class="text-sm"><strong>Referensi:</strong> World Health Organization. Global Tuberculosis Report 2023. Geneva: World Health Organization; 2023.</p>
+                    </div>
+                `
+            }
+        };
+        
+        leafletButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const leafletType = button.getAttribute('data-leaflet');
+                const leaflet = leafletData[leafletType];
+                
+                if (leaflet) {
+                    leafletContent.innerHTML = `
+                        <div class="flex justify-between items-center mb-6 no-print">
+                            <h2 class="text-2xl font-bold text-primary">${leaflet.title}</h2>
+                            <div>
+                                <button onclick="window.print()" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                                    <i class="fas fa-print mr-2"></i>Cetak
+                                </button>
+                                <button onclick="closeLeaflet()" class="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded">
+                                    <i class="fas fa-times mr-2"></i>Tutup
+                                </button>
+                            </div>
+                        </div>
+                        ${leaflet.content}
+                    `;
+                    
+                    leafletContent.classList.remove('hidden');
+                    
+                    // Scroll to leaflet content
+                    leafletContent.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Function to close leaflet (defined globally for onclick)
+        window.closeLeaflet = function() {
+            leafletContent.classList.add('hidden');
+        };
+
+        // Yoga Details Toggle
+        const showYogaDetails = document.getElementById('show-yoga-details');
+        const hideYogaDetails = document.getElementById('hide-yoga-details');
+        const yogaDetails = document.getElementById('yoga-details');
+        
+        showYogaDetails.addEventListener('click', () => {
+            yogaDetails.classList.remove('hidden');
+            showYogaDetails.style.display = 'none';
+        });
+        
+        hideYogaDetails.addEventListener('click', () => {
+            yogaDetails.classList.add('hidden');
+            showYogaDetails.style.display = 'block';
+        });
+
+        // Simulator Tekanan Darah
+        const systolicValue = document.getElementById('systolic-value');
+        const diastolicValue = document.getElementById('diastolic-value');
+        const decreaseBp = document.getElementById('decrease-bp');
+        const increaseBp = document.getElementById('increase-bp');
+        const bpStatus = document.getElementById('bp-status');
+        
+        let systolic = 120;
+        let diastolic = 80;
+        
+        function updateBpStatus() {
+            if (systolic < 120 && diastolic < 80) {
+                bpStatus.textContent = "Optimal";
+                bpStatus.className = "text-center font-bold text-green-600";
+            } else if (systolic < 130 && diastolic < 85) {
+                bpStatus.textContent = "Normal";
+                bpStatus.className = "text-center font-bold text-green-500";
+            } else if (systolic < 140 && diastolic < 90) {
+                bpStatus.textContent = "Normal Tinggi";
+                bpStatus.className = "text-center font-bold text-yellow-500";
+            } else if (systolic < 160 && diastolic < 100) {
+                bpStatus.textContent = "Hipertensi Stadium 1";
+                bpStatus.className = "text-center font-bold text-orange-500";
+            } else if (systolic < 180 && diastolic < 110) {
+                bpStatus.textContent = "Hipertensi Stadium 2";
+                bpStatus.className = "text-center font-bold text-red-500";
+            } else {
+                bpStatus.textContent = "Hipertensi Krisis";
+                bpStatus.className = "text-center font-bold text-red-700";
+            }
+        }
+        
+        decreaseBp.addEventListener('click', () => {
+            systolic = Math.max(80, systolic - 5);
+            diastolic = Math.max(50, diastolic - 3);
+            systolicValue.textContent = systolic;
+            diastolicValue.textContent = diastolic;
+            updateBpStatus();
+        });
+        
+        increaseBp.addEventListener('click', () => {
+            systolic = Math.min(200, systolic + 5);
+            diastolic = Math.min(130, diastolic + 3);
+            systolicValue.textContent = systolic;
+            diastolicValue.textContent = diastolic;
+            updateBpStatus();
+        });
+
+        // Simulator Gula Darah Diabetes
+        const carbsSlider = document.getElementById('carbs-slider');
+        const carbsValue = document.getElementById('carbs-value');
+        const exerciseSlider = document.getElementById('exercise-slider');
+        const exerciseValue = document.getElementById('exercise-value');
+        const simulateSugar = document.getElementById('simulate-sugar');
+        const sugarResult = document.getElementById('sugar-result');
+        const sugarLevel = document.getElementById('sugar-level');
+        const sugarSuggestion = document.getElementById('sugar-suggestion');
+        
+        carbsSlider.addEventListener('input', () => {
+            carbsValue.textContent = `${carbsSlider.value}g`;
+        });
+        
+        exerciseSlider.addEventListener('input', () => {
+            exerciseValue.textContent = `${exerciseSlider.value} menit`;
+        });
+        
+        simulateSugar.addEventListener('click', () => {
+            const carbs = parseInt(carbsSlider.value);
+            const exercise = parseInt(exerciseSlider.value);
+            
+            // Simulasi sederhana: semakin banyak karbohidrat, semakin tinggi gula darah
+            // Semakin banyak olahraga, semakin rendah gula darah
+            let baseSugar = 90; // Gula darah dasar
+            let sugar = baseSugar + (carbs * 0.5) - (exercise * 0.3);
+            
+            // Batasi dalam rentang yang realistis
+            sugar = Math.max(70, Math.min(200, sugar));
+            
+            let suggestion;
+            
+            if (sugar < 100) {
+                suggestion = "Kadar gula darah normal. Pertahankan pola makan dan aktivitas fisik Anda.";
+            } else if (sugar < 126) {
+                suggestion = "Kadar gula darah pra-diabetes. Perhatikan asupan karbohidrat dan tingkatkan aktivitas fisik.";
+            } else {
+                suggestion = "Kadar gula darah tinggi. Konsultasi dengan dokter dan terapkan pola makan yang terkontrol.";
+            }
+            
+            sugarLevel.textContent = Math.round(sugar);
+            sugarSuggestion.textContent = suggestion;
+            sugarResult.classList.remove('hidden');
+        });
+
+        // Kalkulator Risiko TB Paru
+        const tbRiskBtns = document.querySelectorAll('.risk-btn, .hiv-btn, .cough-btn');
+        const calculateTbRisk = document.getElementById('calculate-tb-risk');
+        const tbRiskResult = document.getElementById('tb-risk-result');
+        const tbRiskLevel = document.getElementById('tb-risk-level');
+        const tbRiskSuggestion = document.getElementById('tb-risk-suggestion');
+        
+        tbRiskBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parentClass = btn.classList[0]; // risk-btn, hiv-btn, atau cough-btn
+                const siblings = document.querySelectorAll(`.${parentClass}`);
+                siblings.forEach(sibling => {
+                    sibling.classList.remove('bg-amber-500', 'text-white');
+                    sibling.classList.add('bg-slate-200', 'dark:bg-slate-700');
+                });
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-700');
+                btn.classList.add('bg-amber-500', 'text-white');
+            });
+        });
+        
+        calculateTbRisk.addEventListener('click', () => {
+            const contact = document.querySelector('.risk-btn.bg-amber-500')?.dataset.risk === 'yes';
+            const hiv = document.querySelector('.hiv-btn.bg-amber-500')?.dataset.hiv === 'positive';
+            const cough = document.querySelector('.cough-btn.bg-amber-500')?.dataset.cough === 'yes';
+            
+            let riskScore = 0;
+            
+            if (contact) riskScore += 3;
+            if (hiv) riskScore += 4;
+            if (cough) riskScore += 3;
+            
+            let level, suggestion;
+            
+            if (riskScore <= 2) {
+                level = "Rendah";
+                suggestion = "Risiko TB rendah. Pertahankan gaya hidup sehat dan sistem imun yang baik.";
+            } else if (riskScore <= 5) {
+                level = "Sedang";
+                suggestion = "Risiko TB sedang. Perhatikan gejala dan lakukan pemeriksaan jika diperlukan.";
+            } else {
+                level = "Tinggi";
+                suggestion = "Risiko TB tinggi. Segera konsultasi dengan dokter untuk pemeriksaan lebih lanjut.";
+            }
+            
+            tbRiskLevel.textContent = level;
+            tbRiskSuggestion.textContent = suggestion;
+            tbRiskResult.classList.remove('hidden');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.grid > div, .flex > div').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+    </body>
+</html>
